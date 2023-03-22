@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lista de Produtos</title>
+  </head>
+  <body>
+    <h1>Lista de Produtos</h1>
+    <a href="/produto/novo"><button>Novo Produto</button></a>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for produto in produtos %}
+          <tr>
+            <td>{{ produto[0] }}</td>
+            <td>{{ produto[1] }}</td>
+            <td>{{ produto[2] }}</td>
+            <td>{{ produto[3] }}</td>
+            <td>
+              <a href="/produto/{{ produto[0] }}"><button>Editar</button></a>
+              <form action="/produto/{{ produto[0] }}" method="post" style="display:inline">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit">Deletar</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
