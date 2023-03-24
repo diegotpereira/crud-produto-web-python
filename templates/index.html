@@ -1,11 +1,16 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Lista de Produtos</title>
-  </head>
-  <body>
-    <h1>Lista de Produtos</h1>
-    <a href="/produto/novo"><button>Novo Produto</button></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Lista de Produtos</h1>
+    <a href="{{ url_for('novoProduto.novo') }}"><button>Novo Produto</button></a>
     <table>
       <thead>
         <tr>
@@ -24,15 +29,16 @@
             <td>{{ produto[2] }}</td>
             <td>{{ produto[3] }}</td>
             <td>
-              <a href="/produto/{{ produto[0] }}"><button>Editar</button></a>
-              <form action="/produto/{{ produto[0] }}" method="post" style="display:inline">
+              <a href="{{ url_for('alterar_produto.editar_produto', id=produto[0]) }}"><button>Editar</button></a></a>
+              <a href="{{ url_for('deletarProduto.deletar_produto', id=produto[0]) }}"><button>Deletar</button></a>
+              <!-- <form action="/produto/{{ produto[0] }}" method="post" style="display:inline">
                 <input type="hidden" name="_method" value="delete">
                 <button type="submit">Deletar</button>
-              </form>
+              </form> -->
             </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
-  </body>
+</body>
 </html>

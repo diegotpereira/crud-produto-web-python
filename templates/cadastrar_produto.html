@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cadastrar_produto.css') }}">
+    <title>Cadastro de Produto</title>
+</head>
+
+<body>
+    <h1>Cadastro de Produtos</h1>
+    <form method="POST" action="{{ url_for('produtos.inserir') }}">
+        <!-- {% if method == 'PUT' %} -->
+        <input type="hidden" name="_method" value="PUT">
+        <!-- {% endif %} -->
+        <input type="hidden" name="id" >
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"required>
+
+        <label for="descricao">Descrição:</label>
+        <!-- <textarea id="descricao" name="descricao"></textarea><br> -->
+        <textarea id="descricao" name="descricao" rows="5" style="display: block; width: 100%; padding: 10px; font-size: 16px; border: 2px solid #ccc; border-radius: 4px;"></textarea>
+
+
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" step="0.01"  required><br>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+
+</body>
+
+</html>

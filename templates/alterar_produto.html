@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    <form method="POST" action="/editar-produto/{{ produto[0] }}">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ produto[1] }}" required>
+        <br>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao">{{ produto[2] }}</textarea><br>
+        <br>
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" value="{{ produto[3] }}" step="0.01" required>
+        <br>
+        <button type="submit">Salvar</button>
+      </form>
+</body>
+</html>
