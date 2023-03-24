@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="POST">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email"><br>
+        <label for="senha">Senha: </label>
+        <input type="password" name="senha" id="senha"><br>
+        <label for="usuarionome">Usuario Nome</label>
+        <input type="text" name="usuarionome" id="usuarionome"><br>
+        <input type="submit" value="Entrar">
+    </form>
+
+    <h2>Cadastrar</h2>
+    <form action="/registrar" method="POST">
+        <label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome"><br><br>
+        <label for="email">Email:</label>
+		<input type="text" id="email" name="email"><br><br>
+        <label for="usuarionome">Usuario Nome:</label>
+		<input type="text" id="usuarionome" name="usuarionome"><br><br>
+		<label for="senha">Senha:</label>
+		<input type="password" id="senha" name="senha"><br><br>
+		<label for="confirmar_senha">Confirmar Senha:</label>
+		<input type="password" id="confirmar_senha" name="confirmar_senha"><br><br>
+		<input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
